@@ -15,16 +15,24 @@ public class AdminModel {
     private String name;
     private String designation;
     private String company_name;
+    private String dob;
+    private String gender;
+    private String email;
+    private String password;
 
     public AdminModel() {
     }
 
-    public AdminModel(int id, int emp_id, String name, String designation, String company_name) {
+    public AdminModel(int id, int emp_id, String name, String designation, String company_name, String dob, String gender, String email, String password) {
         this.id = id;
         this.emp_id = emp_id;
         this.name = name;
         this.designation = designation;
         this.company_name = company_name;
+        this.dob = dob;
+        this.gender = gender;
+        this.email = email;
+        this.password = password;
     }
 
     public int getId() {
@@ -65,5 +73,37 @@ public class AdminModel {
 
     public void setCompany_name(String company_name) {
         this.company_name = company_name;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
