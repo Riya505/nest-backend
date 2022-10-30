@@ -17,11 +17,8 @@ public interface EmployeeDao extends CrudRepository<EmployeeModel,Integer> {
 
     @Modifying
     @Query(value = "UPDATE `employee_leave` SET `status`=:status WHERE `emp_id`=:emp_id",nativeQuery = true)
-    void acceptByEmployeeId(String status,Integer emp_id);
+    void UpdateLeaveRequestByEmployeeId(Integer status,Integer emp_id);
 
-    @Modifying
-    @Query(value = "UPDATE `employee_leave` SET `status`=:status WHERE `emp_id`=:reject_id",nativeQuery = true)
-    void rejectByEmployeeId(String status,Integer reject_id);
 
 
 }

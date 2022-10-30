@@ -17,12 +17,12 @@ public class EmployeeModel {
     private int duration;
     private String type;
     private String reason;
-    private String status;
+    private int status;
 
     public EmployeeModel() {
     }
 
-    public EmployeeModel(int id, int emp_id, String start_Date, String end_Date, int duration, String type, String reason, String status) {
+    public EmployeeModel(int id, int emp_id, String start_Date, String end_Date, int duration, String type, String reason, int status) {
         this.id = id;
         this.emp_id = emp_id;
         this.start_Date = start_Date;
@@ -89,11 +89,11 @@ public class EmployeeModel {
         this.reason = reason;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 }
