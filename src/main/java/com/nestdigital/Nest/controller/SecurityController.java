@@ -30,6 +30,12 @@ public class SecurityController {
         return (List<SecurityModel>) dao.viewSecuritySingle(security.getSecurityId());
     }
 
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/securityLogin",consumes = "application/json",produces = "application/json")
+    public List<SecurityModel> securityLogin(@RequestBody SecurityModel login){
+        return (List<SecurityModel>) dao.securityLogin(login.getEmail(),login.getPassword());
+    }
+
 
 
 

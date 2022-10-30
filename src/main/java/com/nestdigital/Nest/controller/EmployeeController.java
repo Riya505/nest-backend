@@ -29,18 +29,12 @@ public class EmployeeController {
     }
     @CrossOrigin(origins = "*")
     @Transactional
-    @PostMapping(path = "/acceptLeaveRequest",consumes = "application/json",produces = "application/json")
-    public String acceptLeaveRequest(@RequestBody EmployeeModel accept){
-        dao.acceptByEmployeeId(accept.getStatus(),accept.getEmp_id());
+    @PostMapping(path = "/UpdateLeaveRequest",consumes = "application/json",produces = "application/json")
+    public String UpdateLeaveRequest(@RequestBody EmployeeModel update){
+        dao.UpdateLeaveRequestByEmployeeId(update.getStatus(),update.getEmp_id());
         return "{status:'success'}";
     }
-    @CrossOrigin(origins = "*")
-    @Transactional
-    @PostMapping(path = "/rejectLeave",consumes = "application/json",produces = "application/json")
-    public String rejectLeave(@RequestBody EmployeeModel reject){
-        dao.rejectByEmployeeId(reject.getStatus(),reject.getEmp_id());
-        return "{status:'success'}";
-    }
+
 
 
 }

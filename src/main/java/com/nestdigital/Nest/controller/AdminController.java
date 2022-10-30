@@ -35,7 +35,6 @@ public class AdminController {
         return "{status:'success'}";
     }
     @CrossOrigin(origins = "*")
-    @Transactional
     @PostMapping(path = "/searchEmployee",consumes = "application/json",produces = "application/json")
     public List<AdminModel> searchEmployee(@RequestBody AdminModel search){
         return (List<AdminModel>) dao.SearchEmployeeByEmpId(search.getEmp_id());

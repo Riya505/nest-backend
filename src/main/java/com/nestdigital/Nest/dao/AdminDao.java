@@ -13,8 +13,8 @@ public interface AdminDao extends CrudRepository<AdminModel,Integer> {
     @Query(value = "DELETE FROM `employee` WHERE `emp_id` =:emp_id",nativeQuery = true)
             void DeleteEmployeeByEmpid(Integer emp_id);
 
-    @Query(value = "SELECT `id`, `company_name`, `designation`, `dob`, `email`, `emp_id`, `gender`, `name`, `password` FROM `employee` WHERE `emp_id`=:emp_id",nativeQuery = true)
-    List<AdminModel>SearchEmployeeByEmpId(Integer emp_id);
+    @Query(value = "SELECT * FROM `employee` WHERE `emp_id`=:id",nativeQuery = true)
+    List<AdminModel>SearchEmployeeByEmpId(Integer id);
 
     @Modifying
     @Query(value = "UPDATE `employee` SET `company_name`=:company_name,`designation`=:designation,`dob`=:dob,`email`=:email,`gender`=:gender,`name`=:name,`password`=:password WHERE `emp_id`=:emp_id",nativeQuery = true)
